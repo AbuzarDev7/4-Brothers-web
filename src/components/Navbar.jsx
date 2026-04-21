@@ -22,7 +22,7 @@ const Navbar = () => {
         <a href="#about" className="hover:text-[var(--color-brand-red)] transition-colors">Our Story</a>
         <a href="#menu" className="hover:text-[var(--color-brand-red)] transition-colors">Menu</a>
         <a href="#locations" className="hover:text-[var(--color-brand-red)] transition-colors">Locations</a>
-        <a href="#contact" className="hover:text-[var(--color-brand-red)] transition-colors">Get in Touch</a>
+        <a href="#contact-us" className="hover:text-[var(--color-brand-red)] transition-colors">Contact</a>
       </div>
       <div className="flex items-center gap-4">
         <button className="flex justify-center items-center h-12 w-12 rounded-full border-2 border-[var(--color-brand-black)] hover:bg-[var(--color-brand-black)] hover:text-white transition-all text-[var(--color-brand-black)] group">
