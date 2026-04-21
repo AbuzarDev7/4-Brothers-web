@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Anton', sans-serif;
+  --font-script: 'Caveat', cursive;
+  --font-sans: 'Poppins', sans-serif;
+
+  --color-brand-red: #BD3211;
+  --color-brand-yellow: #FFC222;
+  --color-brand-cream: #E5DED0;
+  --color-brand-black: #111111;
+  --color-brand-brown: #1A0D00;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-black);
+  overflow-x: hidden;
+}
+
+/* Base custom classes to reuse if necessary, though we'll stick to tailwind utilities */
+.torn-top {
+  clip-path: polygon(0% 5%, 5% 0%, 10% 4%, 15% 1%, 20% 6%, 25% 2%, 30% 7%, 35% 3%, 40% 8%, 45% 2%, 50% 6%, 55% 1%, 60% 7%, 65% 2%, 70% 8%, 75% 3%, 80% 9%, 85% 1%, 90% 7%, 95% 2%, 100% 6%, 100% 100%, 0% 100%);
+}
+
+.torn-bottom {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 95% 100%, 90% 96%, 85% 99%, 80% 94%, 75% 98%, 70% 93%, 65% 97%, 60% 92%, 55% 99%, 50% 94%, 45% 98%, 40% 92%, 35% 97%, 30% 93%, 25% 98%, 20% 94%, 15% 99%, 10% 96%, 5% 100%, 0% 95%);
+}
+
+/* Grain pseudo-element */
+.bg-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opactiy='0.05'/%3E%3C/svg%3E");
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
